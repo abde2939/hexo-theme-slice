@@ -1,0 +1,169 @@
+
+<html>
+    <head>
+        <!--General Setting-->
+        <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+        <meta charset="utf-8">
+        
+        <!--Site Setting-->
+        <title>響喵的幻想空间~</title>
+        
+        <!--Import StyleSheet-->
+        <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/obsidian.min.css">
+        <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="render/mainpage.css">
+        <link rel="stylesheet" href="render/nplayer.css">
+        <link rel="stylesheet" href="render/main.css">
+         <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"> 
+    </head>
+    <body>
+        <!-- Site Plugin -->
+        
+        <div id="mainpage" class="mainpage"  style="background-image: url('/background.jpg')">
+            <div class="header">
+                <h8>響喵的幻想空间~</h8>
+                <small>Node.js / Swift / Golang / Python</small>
+                <div id="mploading" class="loading2"></div>
+                <div id="mptoggle" class="fa">&#xf102;</div>
+            </div>
+        </div>
+        <div id="nplayer">
+            <div class="ntitle">一首歌曲</div>
+            <div class="nsubtitle">NHibiki - 歌曲</div>
+            <div class="ncontrolplay fa"></div>
+            <div class="ncontrolnext fa"></div>
+            <div class="switcher"></div>
+            <audio id="naudio" autoplay repeat></audio>
+        </div>
+        
+        <!-- Site -->
+        <div class="container">
+            <!--Site Header-->
+            <div class="header">
+                <h8>響喵的幻想空间~</h8>
+                <small>Node.js / Swift / Golang / Python</small>
+                <hr />
+            </div>
+            
+            <!--Article-->
+            <div id="article" current="#">
+                <h8 id="atitle" class="article_title">第一篇文章</h8>
+                <div id="atime" class="article_time">
+                        2017/08/19 6:32 PM
+                </div>
+                <div class="article_info">
+                    <ul id="acate" class="article_category">
+                        <a href="#/sidectl/tag_category/笔记"><li class="fa">我自己的笔记</li></a>
+                    </ul>
+                    <ul id="atag" class="article_tag">
+                        <a href="#/sidectl/tag_tag/笔记"><li class="fa">笔记</li></a>
+                        <a href="#/sidectl/tag_tag/NHibiki"><li class="fa">NHibiki</li></a>
+                    </ul>
+                    
+                </div>
+                <div id="acontent" class="article_content">
+                    <p>段落一</p>
+                    <pre qoute>段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二段落二</pre>
+                    <br />
+                    <p>下面是代码</p>
+                    <li>代码一</li>
+                    <li>代码二</li>
+                    <li>代码三</li>
+                    <pre>
+                        <code>
+&lt;a href="??"&gt;OK&lt;/a&gt;
+this.console.log("haha");
+console.log("it is a long long long long long long long long long long long long long long long long long long long long long sentence.");
+                        </code>
+                    </pre>
+                    <h3>段落三</h3>
+                    <p>段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四段落四</p>
+                    <b>段落五</b>
+                </div>
+            </div>
+            
+            <!--Surf Control-->
+            <div class="page_control">
+                <button class="rbtn fa" onclick="prev();"> &#xf100; Prev </button>
+                <button class="rbtn fa" onclick="next();"> Next &#xf101; </button>
+            </div>
+            
+            <!--Comments-->
+            <hr />
+            <div class="comments">
+                <div id="comments_table">
+                <button id="comments_button" class="rbtn flatbtn" onclick="showComments();">Show Comments</button>
+            </div>
+            
+            <!--Site Footer-->
+            <div class="footer">
+                <p class="siteinfo">采用 Creative Comments 4.0 协议。</p>
+                <p class="sitecpr">Using Theme Slice By <a href="https://nekoyu.cc">NHibiki</a>。 Site Copyright &copy;NHibiki 2017。</p>
+            </div>
+        </div>
+        
+        <div id="open" class="menubtn fa" onclick="showMenu();"></div>
+        <div id="menu" class="sideview">
+            <div class="header">
+                <h8>響喵的幻想空间~</h8>
+                <small>Node.js / Swift / Golang / Python</small>
+            </div>
+            <div class="sidemenu">
+                
+                    <a href="/#/home"><li>主页</li></a>
+                
+                    <a href="/#/article/about"><li>关于</li></a>
+                
+                    <a href="/#/tag"><li>标签</li></a>
+                
+                    <a href="/#/category"><li>分类</li></a>
+                
+                    <a href="/#/link"><li>链接</li></a>
+                
+                    <a href="https://nekoyu.cc"><li>NHibiki</li></a>
+                
+            </div>
+            <div id="linktable" class="sidelink">
+                <a href="#/view/article_is_a"><li>第一篇文章</li><p>第一篇文章第一篇文章</p></a>
+                <a href="#/view/article_intro"><li>第二篇文章</li><p>第一篇文章第一篇文章</p></a>
+                <a href="#/view/article_haha"><li>第三篇文章</li><p>第一篇文章第一篇文章</p></a>
+                <a href="#/view/article_justtest"><li>第四篇文章</li><p>第一篇文章第一篇文章</p></a>
+                <a href="#/view/article_miaomiao"><li>第五篇文章</li><p>第一篇文章第一篇文章</p></a>
+            </div>
+        </div>
+        
+        <!--Import Script-->
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>
+            var CONTENTURL='/content.json';
+            var SONGLIST = [
+                
+                    {
+                        title: "音乐流",
+                        subtitle: "NHibiki - 音乐流",
+                        src: "http://host.nekoyu.cc:8010/nekostream"
+                    },
+                
+                ];
+            var FRIENDLIST = {
+                
+                    "YuunoHibiki": "https://nekoyu.cc",
+                
+                    "LER": "https://rongyi.ml",
+                
+            };
+            var disqus_shortname = '';
+            var GITID = '267eb39be851ac83c59e';
+            var GITSEC = '47a7bae9a4b1550d331f36a3f26a86c573547555';
+            var GITREPO = 'GitIssue';
+            var GITOWNER = 'NHibiki';
+            var WEBNAME = '響喵的幻想空间~';
+        </script>
+        <script src="script/mainpage.js"></script>
+        <script src="script/controller.js"></script>
+        <script src="script/nplayer.js"></script>
+        <script src="script/main.js"></script>
+         <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
+    </body>
+</html>
