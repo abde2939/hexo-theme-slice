@@ -14,12 +14,11 @@ music:
     src: url to the song
 
 comment:
-  disqus: # Disqus ID
   github: # Gitalk
-    id: 
+    owner: 
     repo: 
-    client_id: 
-    client_secret: 
+    id: 
+    secret: 
 
 link:
   YuunoHibiki: https://nekoyu.cc

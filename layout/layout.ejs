@@ -1,3 +1,9 @@
+<%
+    var gitalk = false;
+    if (theme.comment.github.id) {
+        gitalk = true;
+    }
+%>
 <html>
     <head>
         <!--General Setting-->
@@ -13,7 +19,7 @@
         <link rel="stylesheet" href="render/mainpage.css">
         <link rel="stylesheet" href="render/nplayer.css">
         <link rel="stylesheet" href="render/main.css">
-        
+        <% if (gitalk) { %> <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"> <% } %>
     </head>
     <body>
         <!-- Site Plugin -->
@@ -93,7 +99,8 @@ console.log("it is a long long long long long long long long long long long long
             <!--Comments-->
             <hr />
             <div class="comments">
-                <button class="rbtn flatbtn">Show Comments</button>
+                <div id="comments_table">
+                <button id="comments_button" class="rbtn flatbtn" onclick="showComments();">Show Comments</button>
             </div>
             
             <!--Site Footer-->
@@ -142,10 +149,17 @@ console.log("it is a long long long long long long long long long long long long
                     "<%=i%>": "<%=theme.link[i]%>",
                 <% } %>
             };
+            var disqus_shortname = '<%=theme.comment.disqus%>';
+            var GITID = '<%=theme.comment.github.id%>';
+            var GITSEC = '<%=theme.comment.github.secret%>';
+            var GITREPO = '<%=theme.comment.github.repo%>';
+            var GITOWNER = '<%=theme.comment.github.owner%>';
+            var WEBNAME = '<%= config.title %>';
         </script>
         <script src="script/mainpage.js"></script>
         <script src="script/controller.js"></script>
         <script src="script/nplayer.js"></script>
         <script src="script/main.js"></script>
+        <% if (gitalk) { %> <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> <% } %>
     </body>
 </html>

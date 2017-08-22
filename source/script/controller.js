@@ -27,11 +27,11 @@ var flashHashEvent = (e) => {
     }
     
     var pre = routers[0];
-    if (pre == "article" || pre == "tag" || pre == "category") {
+    if (pre == "articles" || pre == "tag" || pre == "category") {
         if (routers.length == 2) {
             doFuncS[pre](routers[1]);
         } else {
-            if (pre == "article") {
+            if (pre == "articles") {
                 gotoHash("/home");
                 return;
             } else {
@@ -50,7 +50,7 @@ window.onhashchange = (e) => {
 }
 
 var doFuncS = {
-    "article": (e) => {
+    "articles": (e) => {
         loadArticleByName(e);
     },
     "tag": (e) => {

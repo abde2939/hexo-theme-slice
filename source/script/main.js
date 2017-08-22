@@ -118,7 +118,7 @@ var showCati = (e = null) => {
         if (CATEGORIES.hasOwnProperty(e)) {
             var _p = CATEGORIES[e];
             for (var i in _p) {
-                addTable(`#/article/${POSTS[_p[i]].slug}`, POSTS[_p[i]].title, POSTS[_p[i]].excerpt || POSTS[_p[i]].title);
+                addTable(`#/articles/${POSTS[_p[i]].slug}`, POSTS[_p[i]].title, POSTS[_p[i]].excerpt || POSTS[_p[i]].title);
             }
         } else {
             gotoHash("/category");
@@ -136,7 +136,7 @@ var showTag = (e = null) => {
         if (TAGS.hasOwnProperty(e)) {
             var _p = TAGS[e];
             for (var i in _p) {
-                addTable(`#/article/${POSTS[_p[i]].slug}`, POSTS[_p[i]].title, POSTS[_p[i]].excerpt || POSTS[_p[i]].title);
+                addTable(`#/articles/${POSTS[_p[i]].slug}`, POSTS[_p[i]].title, POSTS[_p[i]].excerpt || POSTS[_p[i]].title);
             }
         } else {
             gotoHash("/tag");
@@ -147,7 +147,7 @@ var showTag = (e = null) => {
 var showArticle = () => {
     clearTable();
     for (var i = 0; i < POSTS.length; i++) {
-        addTable(`#/article/${POSTS[i].slug}`, POSTS[i].title, POSTS[i].excerpt || POSTS[i].title);
+        addTable(`#/articles/${POSTS[i].slug}`, POSTS[i].title, POSTS[i].excerpt || POSTS[i].title);
     }
 }
 
@@ -158,9 +158,9 @@ var loadArticleByName = (e) => {
 var loadArticleByNum = (e, keepHash=false) => {
     if (e >= 0 && e < POSTS.length) {
         var _p = POSTS[e];
-        if (window.location.hash != "#/article/" + _p.slug) {
+        if (window.location.hash != "#/articles/" + _p.slug) {
             if (!keepHash) {
-                gotoHash("/article/" + _p.slug);
+                gotoHash("/articles/" + _p.slug);
             }
         } else {
             $("#mainpage").removeClass("showmain");
@@ -172,6 +172,7 @@ var loadArticleByNum = (e, keepHash=false) => {
         $("#acontent").html(_p.content);
         CURRENT = e;
         $('code').each(function(i, block) {hljs.highlightBlock(block);});
+        document.title = WEBNAME + " | " + _p.title;
         toTop();
     }
     showMenu(0);
@@ -202,5 +203,40 @@ var prepareSong = () => {
     nplayerList = SONGLIST;
     if (nplayerList.length) {
         playMusic(nplayerList[currentPlay]);
+    }
+}
+
+var showComment = {
+    "disqus": (node) => {
+        node.html("<div id='disqus_thread'></div>");
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    },
+    "gitalk": (node) => {
+        const gitalk = new Gitalk({
+          clientID: GITID,
+          clientSecret: GITSEC,
+          repo: GITREPO,
+          owner: GITOWNER,
+          id: getHash().substring(2),
+          admin: [GITOWNER],
+          distractionFreeMode: true,
+          createIssueManually: true
+        });
+        console.log(gitalk);
+        gitalk.render(node);
+    },
+}
+
+var showComments = () => {
+    var node = $("#comments_table");
+    $("#comments_button").hide();
+    if (gitalk) {
+        showComment["gitalk"](node);
+    } else if (disqus_shortname) {
+        showComment["disqus"](node);
     }
 }
