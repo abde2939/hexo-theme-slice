@@ -227,7 +227,7 @@ h1:hover, h2:hover, h3:hover, h4:hover, h5:hover {
 }
 
 .article_category li:before {
-    content: "\f02d";
+    content: "\f097";
     margin-right: 3px;
 }
 
