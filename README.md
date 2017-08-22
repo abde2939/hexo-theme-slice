@@ -5,7 +5,7 @@ A Simple, Light, Beautiful, Onepaged Hexo Theme.
 ![NHibiki](https://img.shields.io/badge/Author-NHibiki-40aa00.svg?style=flat-square)
 ![Code](https://img.shields.io/badge/Code%20With-<3-ff0000.svg?style=flat-square)
 
-[Demo](https://github.cc)
+[Demo](https://slice.nekoyu.cc) | [Customize](https://github.com/NHibiki/hexo_theme_slice#customize)
 
 ## Installation
 
