@@ -234,8 +234,8 @@ var showComment = {
 var showComments = () => {
     var node = $("#comments_table");
     $("#comments_button").hide();
-    if (gitalk) {
-        showComment["gitalk"](node);
+    if (GITID) {
+        showComment["gitalk"](node[0]);
     } else if (disqus_shortname) {
         showComment["disqus"](node);
     }
