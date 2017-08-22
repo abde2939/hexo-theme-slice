@@ -1,6 +1,12 @@
 # Slice
 A Simple, Light, Beautiful, Onepaged Hexo Theme.
 
+![Slice](https://img.shields.io/badge/Hexo%20Theme-Slice-ff4500.svg?style=flat-square)
+![NHibiki](https://img.shields.io/badge/Author-NHibiki-40aa00.svg?style=flat-square)
+![Code](https://img.shields.io/badge/Code%20With-<3-ff0000.svg?style=flat-square)
+
+[Demo](https://github.cc)
+
 ## Installation
 
 ### Download
@@ -54,3 +60,36 @@ Then, it is time to work on the theme `_config.yml` file.
 
 First, rename `_config.yml.edit` which is a default config to `_config.yml`
 
+```yml
+menu:
+  Home: /#/home
+  About: /#/article/about
+  Tag: /#/tag
+  Category: /#/category
+  Link: /#/link
+  NHibiki: https://nekoyu.cc
+  # Menu Bar
+
+music:
+  "The Song's Name":
+    subtitle: Infomation you want to add to the song
+    src: url to the song
+  "The 2nd Song's Name":
+    subtitle: Infomation you want to add to the song
+    src: url to the song
+  # Music List
+
+comment:
+  github: # Gitalk
+    owner: 
+    repo: 
+    id: 
+    secret: 
+  # Comment System
+
+link:
+  YuunoHibiki: https://nekoyu.cc
+  Slice: https://nhibiki.github.io/slice
+  # Links You Want To Add
+
+```
