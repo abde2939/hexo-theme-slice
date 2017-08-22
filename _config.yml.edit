@@ -1,0 +1,27 @@
+menu:
+  Home: /#/home
+  About: /#/article/about
+  Tag: /#/tag
+  Category: /#/category
+  Link: /#/link
+
+music:
+  "The Song's Name":
+    subtitle: Infomation you want to add to the song
+    src: url to the song
+  "The 2nd Song's Name":
+    subtitle: Infomation you want to add to the song
+    src: url to the song
+
+comment:
+  disqus: # Disqus ID
+  github: # Gitalk
+    id: 
+    repo: 
+    client_id: 
+    client_secret: 
+
+link:
+  YuunoHibiki: https://nekoyu.cc
+  Slice: https://nhibiki.github.io/slice
+

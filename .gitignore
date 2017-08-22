@@ -1,3 +1,7 @@
+# debug
+node_modules/*
+_config.yml
+
 # Logs
 logs
 *.log

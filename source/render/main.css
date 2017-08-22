@@ -1,0 +1,416 @@
+::selection {
+    background: #CFC;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+    background: #b6e3ff;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #2af;
+}
+
+green {
+    color: limegreen;
+}
+
+pre::-webkit-scrollbar, code::-webkit-scrollbar, div::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    background: #ffdeaa;
+}
+
+div::-webkit-scrollbar {
+    background: none;
+}
+
+pre::-webkit-scrollbar-thumb, code::-webkit-scrollbar-thumb {
+    background: #fa2;
+}
+
+div::-webkit-scrollbar-thumb {
+    background: #af2;
+}
+
+p::selection, pre::selection, li::selection {
+    background: #ffd1e7;
+}
+
+div.sidemenu::-webkit-scrollbar-thumb {
+    background: #ff6622;
+    border-radius: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #BBB;
+    transition: .4s ease;
+}
+
+a:hover {
+    color: #77F;
+}
+
+a li {
+    transition: .4s ease;
+}
+
+a li:hover {
+    color: #AAF;
+}
+
+ul {
+    padding: 0 0;
+    margin: 1px 0;
+    display: inline-block;
+}
+
+p {
+    color: #000;
+    line-height: 1.6em;
+}
+
+li {
+    line-height: 1.6em;
+    font-family: FontAwesome;
+    list-style-type: none;
+}
+
+.article_content li:before {
+    content: '\f10c';
+    margin-right: 10px;
+}
+
+h1, h2, h3, h4, h5, div, b, h8 {
+    color: #226;
+}
+
+h1, h2 {
+    margin-top: 2em;
+}
+
+h3, h4, h5 {
+    margin-top: 1.4em;
+}
+
+h8 {
+    display: block;
+}
+
+hr {
+    margin: 5% 15%;
+    height: 1px;
+    background: #66F;
+    border: none;
+}
+
+h1, h2, h3, h4, h5, h8, small {
+    transition: .4s ease;
+    cursor: default;
+}
+
+pre[qoute] {
+    padding: 0px 20px;
+    margin: 0px 10px;
+    white-space: pre-line;
+    border-left: 4px solid #1fb1ff;
+    border-radius: 2px;
+    font-weight: 700;
+    font-size: 1em;
+    line-height: 1.4em;
+    color: #1f53ff;
+    font-family: "幼圆", sans-serif, Arial;
+    transition: .3s ease;
+    padding-right: 0px;
+}
+
+pre[qoute]:hover {
+    color: steelblue;
+}
+
+pre>code {
+    white-space: pre;
+    border: none;
+    overflow-x: scroll;
+}
+
+code.hljs {
+    border-radius: 4px;
+    margin-top: 20px;
+    padding: .5em 2em;
+    line-height: 1.6em;
+}
+
+@media screen and (max-width: 600px) {
+    code.hljs {
+        margin: 0px -14%;
+    }
+}
+
+h1:before, h2:before, h3:before, h4:before, h5:before {
+    font-family: FontAwesome;
+    content: "\f105";
+    padding-right: 10px;
+}
+
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover {
+    opacity: 0.6;
+}
+
+.container {
+    margin: 0 15%;
+}
+
+.header {
+    margin-top: 18%;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .container>.header {
+        margin-top: 120px;
+    }
+    .container {
+        margin: 0 10%;
+    }
+}
+
+.header h8 {
+    font-weight: 600;
+    font-size: 1.7em;;
+    margin: 0 0;
+    padding: 5px 5px;
+    color: #66A;
+}
+
+.header small {
+    font-weight: 600;
+    font-size: .8em;
+    color: #99B;
+}
+
+
+.article_title {
+    margin-top: 1.5em;
+    font-size: 1.6em;
+    font-weight: 900;
+    color: #222;
+    display: inline-block;
+}
+
+.article_title:before {
+    content: "\f02d";
+    font-family: fontAwesome;
+    margin-right: 10px;
+}
+
+.article_time {
+    font-weight: 600;
+    font-size: 12px;
+    color: #AAA;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+.article_tag li:before {
+    content: "\f292";
+    margin-right: 3px;
+}
+
+.article_tag li {
+    display: inline-block;
+    padding: 0 5px;
+    color: #F60;
+}
+
+.article_category li:before {
+    content: "\f02d";
+    margin-right: 3px;
+}
+
+.article_category li {
+    display: inline-block;
+    padding: 0 5px;
+    color: #66F;
+}
+
+.article_content {
+    margin-top: 40px;
+}
+
+.page_control, .comments {
+    margin-top: 3em;
+    text-align: center;
+}
+
+.page_control button, .comments button {
+    background: none;
+    padding: 12px 30px;
+    margin: 10px 30px;
+    color: #666;
+    border: 1px solid #AAA;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.page_control button:hover, .comments button:hover {
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+}
+
+.footer {
+    margin: 3em 0;
+    text-align: center;
+    font-size: .8em;
+    line-height: 1.2em;
+}
+
+.footer p {
+    color: #88C;
+}
+
+.menubtn {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: inherit;
+    height: 40px;
+    font-size: 26px;
+    line-height: 35px;
+    color: #AAF;
+    cursor: pointer;
+    transition: .3s ease;
+    z-index: 100;
+}
+
+.menubtn:hover {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+.menubtn:before {
+    content: "\f0c9";
+}
+
+.menubtn:after {
+    content: ""
+}
+
+.sideview {
+    display: block;
+    position: fixed;
+    width: 100%;
+    max-width: 280px;
+    height: 100%;
+    right: -400px;
+    top: 0px;
+    padding: 30px 40px;
+    transition: .5s ease;
+    background-color: #FFF;
+    border-left: 0px #888 solid;
+    box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.3);
+    overflow-y: scroll;
+}
+
+@media screen and (max-width: 360px) {
+    .sideview {
+        max-width: calc(100% - 80px);
+    }
+}
+
+div.show {
+    display: block;
+    right: 0px;
+}
+
+div.opened:before {
+    content: '\f00d';
+}
+
+.sidemenu {
+    margin-top: 30px;
+    overflow-y: scroll;
+    white-space: nowrap;
+    padding: 5px 0px;
+}
+
+.sidemenu li {
+    padding: 3px 12px;
+    background-color: orangered;
+    display: inline-block;
+    color: white;
+    border-radius: 5px;
+    font-size: .9em;
+    margin: 0px 5px;
+}
+
+.sidemenu li:hover {
+    color: whitesmoke;
+    opacity: .6;
+}
+
+.sidemenu li.active {
+    background: #ffcab6;
+}
+
+.sidelink {
+    margin-top: 40px;
+    overflow-y: scroll;
+    height: calc(100% - 280px);
+}
+
+.sidelink a {
+    transition: .3s ease;
+    display: block;
+    padding: 10px;
+    padding-left: 20px;
+    margin: 0px 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    
+}
+
+.sidelink a:hover {
+    background: #EEE;
+}
+
+.sidelink li {
+    color: blue;
+    line-height: 1.4em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.sidelink li:hover {
+    color: blue;
+}
+
+.sidelink li+p {
+    font-family: FontAwesome;
+    margin: 0px 0px;
+    line-height: 1.2em;
+    font-size: .8em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #AAA;
+}
+
+.sidelink li+p:before {
+    content: "\f097";
+    margin: 0px 8px;
+}
+
+.sidelink li+p:after {
+    content: "";
+}
+
+.sidelink li:before {
+    content: '\f0da';
+    margin-right: 10px;
+}
