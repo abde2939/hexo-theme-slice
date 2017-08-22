@@ -27,7 +27,6 @@ var flashHashEvent = (e) => {
     }
     
     var pre = routers[0];
-    //console.log(pre);
     if (pre == "article" || pre == "tag" || pre == "category") {
         if (routers.length == 2) {
             doFuncS[pre](routers[1]);
@@ -69,6 +68,7 @@ var doFunc = {
         showMenu(0);
         showArticle();
         showHome();
+        console.log("OK");
     },
     "tag": () => {
         showMenu(2);

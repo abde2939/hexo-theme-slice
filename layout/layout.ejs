@@ -10,12 +10,34 @@
         <!--Import StyleSheet-->
         <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/obsidian.min.css">
         <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="render/nplayer.css">
         <link rel="stylesheet" href="render/mainpage.css">
+        <link rel="stylesheet" href="render/nplayer.css">
         <link rel="stylesheet" href="render/main.css">
         
     </head>
     <body>
+        <!-- Site Plugin -->
+        <%
+            var bgurl = config.background || theme.background || "/background.jpg";
+        %>
+        <div id="mainpage" class="mainpage"  style="background-image: url('<%- url_for(bgurl); %>')">
+            <div class="header">
+                <h8><%= config.title %></h8>
+                <small><%= config.subtitle %></small>
+                <div id="mploading" class="loading2"></div>
+                <div id="mptoggle" class="fa">&#xf102;</div>
+            </div>
+        </div>
+        <div id="nplayer">
+            <div class="ntitle">一首歌曲</div>
+            <div class="nsubtitle">NHibiki - 歌曲</div>
+            <div class="ncontrolplay fa"></div>
+            <div class="ncontrolnext fa"></div>
+            <div class="switcher"></div>
+            <audio id="naudio" autoplay repeat></audio>
+        </div>
+        
+        <!-- Site -->
         <div class="container">
             <%- body %>
             <!--Site Header-->
@@ -99,23 +121,6 @@ console.log("it is a long long long long long long long long long long long long
                 <a href="#/view/article_justtest"><li>第四篇文章</li><p>第一篇文章第一篇文章</p></a>
                 <a href="#/view/article_miaomiao"><li>第五篇文章</li><p>第一篇文章第一篇文章</p></a>
             </div>
-        </div>
-        
-        <!-- Site Plugin -->
-        <div id="mainpage" class="mainpage">
-            <div class="header">
-                <h8><%= config.title %></h8>
-                <small><%= config.subtitle %></small>
-                <div id="mptoggle" class="fa">&#xf102;</div>
-            </div>
-        </div>
-        <div id="nplayer">
-            <div class="ntitle">一首歌曲</div>
-            <div class="nsubtitle">NHibiki - 歌曲</div>
-            <div class="ncontrolplay fa"></div>
-            <div class="ncontrolnext fa"></div>
-            <div class="switcher"></div>
-            <audio id="naudio" autoplay repeat></audio>
         </div>
         
         <!--Import Script-->

@@ -5,14 +5,10 @@ var CATEGORIES = {};
 var TAGS = {};
 var CURRENT = -1;
 
-$(document).ready(function() {
-    var keepHash = null;
+$(window).ready(function() {
     if (getHash() == "" || getHash() == "#") gotoHash("/home");
-    else keepHash = getHash().substring(1);
     loadContents(() => {
-        if (keepHash) {
-            gotoHash(keepHash);
-        }
+        flashHashEvent("");
     });
     prepareSong();
 });
@@ -28,7 +24,7 @@ var loadContents = (callback) => {
             CONTENT = e;
             initContent();
             showArticle();
-            loadArticleByNum(0);
+            loadArticleByNum(0, true);
         }
         callback();
     });
@@ -97,7 +93,8 @@ var clearTable = () => {
 }
 
 var showHome = () => {
-    loadArticleByNum(0);
+    $("#mainpage").addClass("showmain");
+    loadArticleByNum(0, true);
 }
 
 var showLink = () => {
@@ -158,11 +155,15 @@ var loadArticleByName = (e) => {
     loadArticleByNum(getIndexBySlug(e));
 }
 
-var loadArticleByNum = (e) => {
+var loadArticleByNum = (e, keepHash=false) => {
     if (e >= 0 && e < POSTS.length) {
         var _p = POSTS[e];
         if (window.location.hash != "#/article/" + _p.slug) {
-            gotoHash("/article/" + _p.slug);
+            if (!keepHash) {
+                gotoHash("/article/" + _p.slug);
+            }
+        } else {
+            $("#mainpage").removeClass("showmain");
         }
         $("#atitle").html(_p.title);
         $("#atime").html(_p.date);

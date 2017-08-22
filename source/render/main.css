@@ -414,3 +414,37 @@ div.opened:before {
     content: '\f0da';
     margin-right: 10px;
 }
+
+.loading2 {
+    animation: loading2 2s ease-out infinite;
+}
+
+@-webkit-keyframes loading2 {
+    0% {
+        opacity: .7;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+}
+
+.loading {
+    animation: loading 2s ease-in-out infinite;
+}
+
+@-webkit-keyframes loading {
+    0% {
+        opacity: 1;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 0.3;
+        transform: scale(1.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(0);
+    }
+}
