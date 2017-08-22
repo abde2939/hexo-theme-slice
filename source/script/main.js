@@ -171,7 +171,7 @@ var loadArticleByNum = (e, keepHash=false) => {
         buildList("#atag", "#/tag/", _p.tags);
         $("#acontent").html(_p.content);
         CURRENT = e;
-        $('code').each(function(i, block) {hljs.highlightBlock(block);});
+        $('pre code').each(function(i, block) {hljs.highlightBlock(block);});
         document.title = WEBNAME + " | " + _p.title;
         toTop();
     }
@@ -221,12 +221,11 @@ var showComment = {
           clientSecret: GITSEC,
           repo: GITREPO,
           owner: GITOWNER,
-          id: getHash().substring(2),
+          id: window.location.host + window.location.pathname + getHash().substring(2),
           admin: [GITOWNER],
           distractionFreeMode: true,
           createIssueManually: true
         });
-        console.log(gitalk);
         gitalk.render(node);
     },
 }

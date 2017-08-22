@@ -68,7 +68,6 @@ var doFunc = {
         showMenu(0);
         showArticle();
         showHome();
-        console.log("OK");
     },
     "tag": () => {
         showMenu(2);

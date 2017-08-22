@@ -137,6 +137,14 @@ pre>code {
     overflow-x: scroll;
 }
 
+code {
+    white-space: pre;
+    border: none;
+    border-radius: 4px;
+    padding: 2px 8px;
+    background: #EEE;
+}
+
 code.hljs {
     border-radius: 4px;
     margin-top: 20px;
@@ -146,7 +154,7 @@ code.hljs {
 
 @media screen and (max-width: 600px) {
     code.hljs {
-        margin: 0px -14%;
+        margin: 0px -10%;
     }
 }
 
