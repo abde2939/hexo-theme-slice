@@ -19,6 +19,7 @@ var nFlashIcon = () => {
 }
 
 var playMusic = (e) => {
+    var au = $("#naudio")[0];
     au.src = e.src;
     $("#nplayer>.ntitle").html(e.title);
     $("#nplayer>.nsubtitle").html(e.subtitle);
