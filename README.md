@@ -93,3 +93,7 @@ link:
   # Links You Want To Add
 
 ```
+
+## License
+
+GNU License 3.0
