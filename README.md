@@ -92,6 +92,9 @@ link:
   Slice: https://nhibiki.github.io/slice
   # Links You Want To Add
 
+license: Creative Commons Attribution-NonCommercial 4.0 International
+  # You can change the site license, default is NC CC 4.0.
+
 ```
 
 ## License
