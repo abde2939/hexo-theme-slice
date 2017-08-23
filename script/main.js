@@ -74,9 +74,6 @@ var showMenu = (e = 1) => {
         } else {
             $("#menu").addClass("show");
             $("#open").addClass("opened");
-            if ((getHashPre() == "articles" || getHashPre() == "home") && menuRouter == "") {
-                menuRouter = getHash();
-            }
         }
         return;
     }
@@ -93,7 +90,6 @@ var showMenu = (e = 1) => {
     } else {
         $("#menu").addClass("show");
         $("#open").addClass("opened");
-        if (menuRouter == "") menuRouter = getHash();
     }
 }
 
