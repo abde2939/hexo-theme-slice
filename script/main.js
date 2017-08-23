@@ -1,4 +1,5 @@
 var isLoaded = false;
+var PAGEID = "slice";
 var CONTENT = {};
 var POSTS = [];
 var CATEGORIES = {};
@@ -179,6 +180,7 @@ var loadArticleByNum = (e, keepHash=false) => {
             $(block).html(mhtml.substring(0, mhtml.length - 7));
         });
         document.title = WEBNAME + " | " + _p.title;
+        PAGEID = window.location.host + window.location.pathname + "articles/" + _p.slug;
         toTop();
     }
     showMenu(0);
@@ -227,7 +229,7 @@ var showComment = {
           clientSecret: GITSEC,
           repo: GITREPO,
           owner: GITOWNER,
-          id: window.location.host + window.location.pathname + getHash().substring(2),
+          id: PAGEID,
           admin: [GITOWNER],
           distractionFreeMode: false,
           createIssueManually: true
