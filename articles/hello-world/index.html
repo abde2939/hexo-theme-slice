@@ -1,5 +1,4 @@
 <body>
-    
     <script>
         var url = "";
         var root = window.location.origin + '/';
@@ -7,8 +6,8 @@
         if (index == -1) {
             url = window.location.origin + "/#" + window.location.pathname;
         } else {
-            url = root + "/#/" + window.location.href.substring(root.length);
+            url = root + "#/" + window.location.href.substring(root.length);
         }
-        window.location.href = url;
+        window.location.href = url.substring(0, url.length - 1);
     </script>
 </body>
