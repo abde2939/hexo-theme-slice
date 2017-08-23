@@ -5,6 +5,7 @@ var POSTS = [];
 var CATEGORIES = {};
 var TAGS = {};
 var CURRENT = -1;
+var disqus_config = null;
 
 $(window).ready(function() {
     if (getHash() == "" || getHash() == "#") gotoHash("/home");
@@ -217,7 +218,7 @@ var prepareSong = () => {
 var showComment = {
     "disqus": (node) => {
         node.html("<div id='disqus_thread'></div>");
-        var disqus_config = function () {
+        disqus_config = function () {
             this.page.url = window.location.protocol + ":/" + PAGEID;
             this.page.identifier = PAGEID;
         };
