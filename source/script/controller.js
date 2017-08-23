@@ -2,6 +2,14 @@ var getHash = () => {
     return window.location.hash;
 }
 
+var setHash = (e) => {
+    window.location.hash = e;
+}
+
+var getHashPre = () => {
+    return (getHash() + "//").split("/")[1];
+}
+
 var sliceHash = (e) => {
     var q = e.indexOf("#");
     return e.substring(q+1);

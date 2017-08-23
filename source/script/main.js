@@ -1,5 +1,6 @@
 var isLoaded = false;
 var PAGEID = "slice";
+var menuRouter = "";
 var CONTENT = {};
 var POSTS = [];
 var CATEGORIES = {};
@@ -10,6 +11,9 @@ var disqus_config = null;
 $(window).ready(function() {
     if (getHash() == "" || getHash() == "#") gotoHash("/home");
     loadContents(() => {
+        if (getHashPre() != "articles") {
+            showHome();
+        }
         flashHashEvent("");
     });
     prepareSong();
@@ -66,6 +70,7 @@ var showMenu = (e = 1) => {
         if (e == 0) {
             $("#menu").removeClass("show");
             $("#open").removeClass("opened");
+            menuRouter = "";
         } else {
             $("#menu").addClass("show");
             $("#open").addClass("opened");
@@ -75,9 +80,17 @@ var showMenu = (e = 1) => {
     if ($("#menu").hasClass("show")) {
         $("#menu").removeClass("show");
         $("#open").removeClass("opened");
+        if (menuRouter != "") {
+            setHash(menuRouter);
+            menuRouter = "";
+        } else {
+            setHash("#/home");
+        }
+        
     } else {
         $("#menu").addClass("show");
         $("#open").addClass("opened");
+        if (menuRouter == "") menuRouter = getHash();
     }
 }
 
