@@ -217,9 +217,14 @@ var prepareSong = () => {
 var showComment = {
     "disqus": (node) => {
         node.html("<div id='disqus_thread'></div>");
+        var disqus_config = function () {
+            this.page.url = window.location.protocol + ":/" + PAGEID;
+            this.page.identifier = PAGEID;
+        };
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
         dsq.async = true;
+        dsq.setAttribute('data-timestamp', +new Date());
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     },
@@ -241,10 +246,10 @@ var showComment = {
 var showComments = () => {
     var node = $("#comments_table");
     $("#comments_button").hide();
-    if (GITID) {
-        showComment["gitalk"](node[0]);
-    } else if (disqus_shortname) {
+    if (disqus_shortname) {
         showComment["disqus"](node);
+    } else if (GITID) {
+        showComment["gitalk"](node[0]);
     }
 }
 

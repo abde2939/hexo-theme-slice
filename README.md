@@ -80,6 +80,7 @@ music:
   # Music List
 
 comment:
+  disqus: # Disqus
   github: # Gitalk
     owner: 
     repo: 
