@@ -87,8 +87,12 @@
             
             <!--Site Footer-->
             <div class="footer">
-                <p class="siteinfo">Applying Creative Comments 4.0 License.</p>
-                <p class="sitecpr">Using Theme Slice By <a href="https://nekoyu.cc">NHibiki</a>. Site Copyright &copy;<%= config.author%> 2017.</p>
+                <% if (theme.license) { %>
+                <p class="siteinfo">Applying <%=theme.license%> License.</p>
+                <% } else { %>
+                <p class="siteinfo">Allrights are preserved by Author.</p>
+                <% } %>
+                <p class="sitecpr">Using Theme <a href="https://github.com/NHibiki/hexo-theme-slice">Slice</a> By <a href="https://nekoyu.cc">NHibiki</a>. Site Copyright &copy;<%= config.author%> 2017.</p>
             </div>
         </div>
         

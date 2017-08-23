@@ -5,17 +5,17 @@ A Simple, Light, Beautiful, Onepaged Hexo Theme.
 ![NHibiki](https://img.shields.io/badge/Author-NHibiki-40aa00.svg?style=flat-square)
 ![Code](https://img.shields.io/badge/Code%20With-<3-ff0000.svg?style=flat-square)
 
-[Demo](https://slice.nekoyu.cc) | [Customize](https://github.com/NHibiki/hexo_theme_slice#customize)
+[Demo](https://slice.nekoyu.cc) | [Customize](https://github.com/NHibiki/hexo-theme-slice#customize)
 
 ## Installation
 
 ### Download
 
 ```bash
-  git clone https://github.com/NHibiki/hexo_theme_slice.git theme/slice
+  git clone https://github.com/NHibiki/hexo-theme-slice.git theme/slice
 ```
 
-Or, download the zip package through [GitHub](https://github.com/NHibiki/hexo_theme_slice/archive/master.zip).
+Or, download the zip package through [GitHub](https://github.com/NHibiki/hexo-theme-slice/archive/master.zip).
 
 Then unzip the file to folder `theme/slice`
 
