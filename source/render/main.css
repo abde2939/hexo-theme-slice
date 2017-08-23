@@ -116,7 +116,7 @@ h1, h2, h3, h4, h5, h8, small {
     cursor: default;
 }
 
-pre[qoute] {
+pre[qoute], blockquote {
     padding: 0px 20px;
     margin: 0px 10px;
     white-space: pre-line;
@@ -131,7 +131,7 @@ pre[qoute] {
     padding-right: 0px;
 }
 
-pre[qoute]:hover {
+pre[qoute]:hover, blockquote:hover{
     color: steelblue;
 }
 
