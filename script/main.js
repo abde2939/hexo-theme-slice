@@ -79,11 +79,12 @@ var showMenu = (e = 1) => {
     }
 }
 
-var addTable = (a, b, c) => {
+var addTable = (a, b, c, jump=false) => {
     var _t = $("#linktable");
     var html = _t.html();
     
-    html += `<a href="${a}"><li>${b}</li><p>${c}</p></a>`;
+    var addOns = jump ? 'target="_blank"' : '';
+    html += `<a ${addOns} href="${a}"><li>${b}</li><p>${c}</p></a>`;
     _t.html(html);
 }
 
@@ -104,11 +105,11 @@ var showLink = () => {
         if (FRIENDLIST[i].indexOf("https://") == 0) {
             name = "<green>[SSL]</green> " + i;
         }
-        addTable(`${FRIENDLIST[i]}`, name, FRIENDLIST[i]);
+        addTable(`${FRIENDLIST[i]}`, name, FRIENDLIST[i], true);
     }
 }
 
-var showCati = (e = null) => {
+var showCate = (e = null) => {
     clearTable();
     if (!e) {
         for (var i in CATEGORIES) {
@@ -171,7 +172,12 @@ var loadArticleByNum = (e, keepHash=false) => {
         buildList("#atag", "#/tag/", _p.tags);
         $("#acontent").html(_p.content);
         CURRENT = e;
-        $('pre code').each(function(i, block) {hljs.highlightBlock(block);});
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+            var mhtml = $(block).html();
+            mhtml = "<cbr>" + mhtml.split("\n").join("</cbr>\n<cbr>");
+            $(block).html(mhtml.substring(0, mhtml.length - 7));
+        });
         document.title = WEBNAME + " | " + _p.title;
         toTop();
     }
@@ -223,7 +229,7 @@ var showComment = {
           owner: GITOWNER,
           id: window.location.host + window.location.pathname + getHash().substring(2),
           admin: [GITOWNER],
-          distractionFreeMode: true,
+          distractionFreeMode: false,
           createIssueManually: true
         });
         gitalk.render(node);
@@ -238,4 +244,8 @@ var showComments = () => {
     } else if (disqus_shortname) {
         showComment["disqus"](node);
     }
+}
+
+var changeRoute = (e) => {
+    $("#linktabletitle").html(e);
 }
