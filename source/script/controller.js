@@ -51,15 +51,18 @@ window.onhashchange = (e) => {
 
 var doFuncS = {
     "articles": (e) => {
+        changeRoute("Article/" + e);
         loadArticleByName(e);
     },
     "tag": (e) => {
         showMenu(2);
+        changeRoute("Tag/" + e);
         showTag(e);
     },
     "category": (e) => {
         showMenu(2);
-        showCati(e);
+        changeRoute("Category/" + e);
+        showCate(e);
     }
 }
 
@@ -67,18 +70,22 @@ var doFunc = {
     "home": () => {
         showMenu(0);
         showArticle();
+        changeRoute("Home");
         showHome();
     },
     "tag": () => {
         showMenu(2);
+        changeRoute("Tag");
         showTag();
     },
     "category": () => {
         showMenu(2);
-        showCati();
+        changeRoute("Category");
+        showCate();
     },
     "link": () => {
         showMenu(2);
+        changeRoute("Link");
         showLink();
     }
 }

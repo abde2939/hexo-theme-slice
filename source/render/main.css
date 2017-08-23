@@ -150,12 +150,23 @@ code.hljs {
     margin-top: 20px;
     padding: .5em 2em;
     line-height: 1.6em;
+    counter-reset: codeline;
 }
 
-@media screen and (max-width: 600px) {
-    code.hljs {
-        margin: 0px -10%;
-    }
+cbr:before {
+    color: #888;
+    display: inline-block;
+    counter-increment: codeline;
+    content: counter(codeline) "." ;
+    min-width: 25px;
+    margin-left: -15px;
+    margin-right: 5px;
+    text-align: right;
+    transition: .3s ease;
+}
+
+cbr:hover::before {
+    color: white;
 }
 
 h1:before, h2:before, h3:before, h4:before, h5:before {
@@ -182,7 +193,7 @@ h1:hover, h2:hover, h3:hover, h4:hover, h5:hover {
         margin-top: 120px;
     }
     .container {
-        margin: 0 10%;
+        margin: 0 5%;
     }
 }
 
@@ -247,6 +258,23 @@ h1:hover, h2:hover, h3:hover, h4:hover, h5:hover {
 
 .article_content {
     margin-top: 40px;
+}
+
+@media screen and (max-width: 600px) {
+    .article_title, .article_time, .article_info {
+        display: block;
+        text-align: center;
+        margin-left: 0px;
+    }
+    .article_title:before {
+        content: "";
+    }
+    .article_info {
+        margin-top: 20px;
+    }
+    .article_content {
+        margin: 0px -3%;
+    }
 }
 
 .page_control, .comments {
@@ -365,8 +393,20 @@ div.opened:before {
     background: #ffcab6;
 }
 
+.sidelinktitle {
+    display: block;
+    margin-top: 35px;
+    margin-bottom: 5px;
+    padding-left: 30px;
+    color: #AAA;
+    pointer-events: none;
+    font-size: .8em;
+    width: calc(100% - 45px);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 .sidelink {
-    margin-top: 40px;
     overflow-y: scroll;
     height: calc(100% - 280px);
 }
