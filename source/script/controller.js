@@ -6,8 +6,8 @@ var setHash = (e) => {
     window.location.hash = e;
 }
 
-var getHashPre = () => {
-    return (getHash() + "//").split("/")[1];
+var getHashPre = (e = getHash()) => {
+    return (e + "//").split("/")[1];
 }
 
 var sliceHash = (e) => {
@@ -22,6 +22,10 @@ var gotoHash = (e) => {
 var flashHashEvent = (e) => {
     var oldUrl = sliceHash(e.hasOwnProperty("oldURL") ? e.oldURL : "");
     var newUrl = sliceHash(e.hasOwnProperty("newURL") ? e.newURL : window.location.href);
+    
+    if ((getHashPre(e.hasOwnProperty("oldURL") ? e.oldURL : "") == "articles" || getHashPre(e.hasOwnProperty("oldURL") ? e.oldURL : "") == "home") && menuRouter == "") {
+        menuRouter = getHash();
+    }
     
     if (newUrl.indexOf("/") != 0) {
         gotoHash("/home");
