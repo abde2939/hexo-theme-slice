@@ -219,7 +219,7 @@ var showComment = {
     "disqus": (node) => {
         node.html("<div id='disqus_thread'></div>");
         disqus_config = function () {
-            this.page.url = window.location.protocol + ":/" + PAGEID;
+            this.page.url = window.location.protocol + "//" + PAGEID;
             this.page.identifier = PAGEID;
         };
         var dsq = document.createElement('script');
