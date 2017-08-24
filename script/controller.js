@@ -20,13 +20,11 @@ var gotoHash = (e) => {
 }
 
 var flashHashEvent = (e) => {
-    var oL = e.hasOwnProperty("oldURL") ? e.oldURL : "";
-    var nL = e.hasOwnProperty("newURL") ? e.newURL : window.location.href;
-    var oldUrl = sliceHash(e.hasOwnProperty("oldURL") ? e.oldURL : "");
-    var newUrl = sliceHash(e.hasOwnProperty("newURL") ? e.newURL : window.location.href);
+    var oldUrl = sliceHash(e.oldURL || "");
+    var newUrl = sliceHash(e.newURL || window.location.href);
     
-    if ((getHashPre(oL) == "articles" || getHashPre(oL) == "home") && (getHashPre(nL) != "articles" && getHashPre(nL) != "home") && menuRouter == "") {
-        menuRouter = oL;
+    if (getHashPre(oldUrl) == "articles" || getHashPre(oldUrl) == "home") {
+        menuRouter = "#" + oldUrl;
     }
     
     if (newUrl.indexOf("/") != 0) {

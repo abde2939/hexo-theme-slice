@@ -13,6 +13,7 @@ $(window).ready(function() {
     loadContents(() => {
         if (getHashPre() != "articles") {
             showHome();
+            menuRouter = "#/home";
         }
         flashHashEvent("");
     });
@@ -83,10 +84,7 @@ var showMenu = (e = 1) => {
         if (menuRouter != "") {
             setHash(menuRouter);
             menuRouter = "";
-        } else {
-            setHash("#/home");
         }
-        
     } else {
         $("#menu").addClass("show");
         $("#open").addClass("opened");
