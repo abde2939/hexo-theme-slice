@@ -1,4 +1,4 @@
-::selection {
+﻿::selection {
     background: #CFC;
 }
 
@@ -46,6 +46,11 @@ div.sidemenu::-webkit-scrollbar-thumb {
 
 body {
     overflow-x: hidden;
+}
+
+img, video, iframe, frame {
+    width: 100%;
+    max-width: 100%;
 }
 
 a {
