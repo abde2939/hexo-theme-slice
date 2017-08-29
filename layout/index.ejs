@@ -81,7 +81,7 @@
             <!--Comments-->
             <hr />
             <div class="comments">
-                <div id="comments_table">
+              <div id="comments_table"></div>
                 <button id="comments_button" class="rbtn flatbtn" onclick="showComments();">Show Comments</button>
             </div>
             
@@ -101,6 +101,9 @@
             <div class="header">
                 <h8><%= config.title %></h8>
                 <small><%= config.subtitle %></small>
+            </div>
+            <div class="searchbar">
+               <input placeholder="Search ..." value="">
             </div>
             <div class="sidemenu">
                 <% for (var i in theme.menu) { %>
