@@ -183,7 +183,23 @@ var loadArticleByNum = (e, keepHash=false) => {
         buildList("#acate", "#/category/", _p.categories);
         buildList("#atag", "#/tag/", _p.tags);
         $("#acontent").html(_p.content);
-        CURRENT = e;
+        if (CURRENT != e) {
+            CURRENT = e;
+            var head = document.getElementsByTagName("head")[0];
+            var rmi = -1;
+            for (var i = 0; i < head.childNodes.length; i++) {
+                if (head.childNodes[i].id == 'dsq_script') {
+                    rmi = i;
+                    break;
+                }
+            }
+            if (rmi != -1) {
+                head.removeChild(head.childNodes[rmi]);
+                var node = $("#comments_table");
+                node.html("");
+                $("#comments_button").show();
+            }
+        }
         $('pre code').each(function(i, block) {
             hljs.highlightBlock(block);
             var mhtml = $(block).html();
@@ -229,15 +245,16 @@ var showComment = {
     "disqus": (node) => {
         node.html("<div id='disqus_thread'></div>");
         disqus_config = function () {
-            this.page.url = window.location.protocol + "//" + PAGEID;
+            this.page.url = window.location.protocol + "//" + PAGEID + "/";
             this.page.identifier = PAGEID;
         };
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
+        dsq.id = 'dsq_script';
         dsq.async = true;
         dsq.setAttribute('data-timestamp', +new Date());
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        document.getElementsByTagName('head')[0].appendChild(dsq);
     },
     "gitalk": (node) => {
         const gitalk = new Gitalk({
