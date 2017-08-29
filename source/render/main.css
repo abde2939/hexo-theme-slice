@@ -382,20 +382,23 @@ div.opened:before {
 }
 
 .searchbar input {
-    padding: 0px 5px;
-    padding-left: 30px;
+    padding: 5px 20px;
     outline: none;
-    border: none;
+    border: 1px #FFF solid; 
     border-radius: 5px;
     background: #DDD;
+    width: 100%;
+    transition: .5s ease;
+    font-size: .9em;
 }
 
-.searchbar input:hover {
+.searchbar:hover>input {
     background: #DADADA;
 }
 
 .searchbar input:focus {
     background: #FFF;
+    border: 1px #EEE solid; 
 }
 
 .sidemenu {
@@ -478,6 +481,10 @@ div.opened:before {
     white-space: nowrap;
     text-overflow: ellipsis;
     color: #AAA;
+}
+
+.sidelink li+p hl {
+    color: orangered;
 }
 
 .sidelink li+p:before {
