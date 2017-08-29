@@ -284,3 +284,17 @@ var showComments = () => {
 var changeRoute = (e) => {
     $("#linktabletitle").html(e);
 }
+
+$("#search").on("keyup", (e) => {
+    clearTable();
+    var text = $("#search").val();
+    for (var i in POSTS) {
+        var indexi = POSTS[i].text.toLowerCase().indexOf(text.trim().toLowerCase());
+        if (indexi != -1) {
+            text = POSTS[i].text.substr(indexi, text.length);
+            var hint = POSTS[i].text.substring(indexi - 10, indexi + text.length + 30);
+            hint = hint.replace(text, `<hl>${text}</hl>`);
+            addTable(`#/articles/${POSTS[i].slug}`, POSTS[i].title, hint);
+        }
+    }
+});
