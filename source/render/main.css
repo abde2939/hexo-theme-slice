@@ -53,6 +53,10 @@ img, video, iframe, frame {
     max-width: 100%;
 }
 
+input {
+    -webkit-appearance: none;
+}
+
 a {
     text-decoration: none;
     color: #BBB;
