@@ -121,12 +121,11 @@ h1, h2, h3, h4, h5, h8, small {
     cursor: default;
 }
 
-pre[qoute], blockquote {
+pre[qoute] {
     padding: 0px 20px;
     margin: 0px 10px;
     white-space: pre-line;
     border-left: 4px solid #1fb1ff;
-    border-radius: 2px;
     font-weight: 700;
     font-size: 1em;
     line-height: 1.4em;
@@ -136,7 +135,25 @@ pre[qoute], blockquote {
     padding-right: 0px;
 }
 
-pre[qoute]:hover, blockquote:hover{
+blockquote {
+    padding: 0px 20px;
+    margin: 0px 10px;
+    border-left: 4px solid #1fb1ff;
+    transition: .3s ease;
+    padding-right: 0px;
+}
+
+blockquote {
+    font-weight: 700;
+    font-size: 1em;
+    line-height: 1.4em;
+    color: #1f53ff;
+    font-family: "幼圆", sans-serif, Arial;
+    transition: .3s ease;
+    padding-right: 0px;
+}
+
+pre[qoute]:hover, blockquote p:hover{
     color: steelblue;
 }
 
@@ -178,11 +195,13 @@ cbr:hover::before {
     color: white;
 }
 
+/*
 h1:before, h2:before, h3:before, h4:before, h5:before {
     font-family: FontAwesome;
     content: "\f105";
     padding-right: 10px;
 }
+*/
 
 h1:hover, h2:hover, h3:hover, h4:hover, h5:hover {
     opacity: 0.6;
