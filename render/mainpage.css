@@ -6,6 +6,7 @@
     background-color: #FFF;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     opacity: 0;
     top: calc(-100% - 10px);
     transition: .8s ease;
@@ -36,7 +37,7 @@
     content: "”";
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
     .mainpage .header h8 {
         font-size: 2em;
     }
@@ -45,7 +46,8 @@
     }
 }
 
-.mainpage #mptoggle, .mainpage #mploading {
+.mainpage #mptoggle,
+.mainpage #mploading {
     display: block;
     text-align: center;
     vertical-align: center;
