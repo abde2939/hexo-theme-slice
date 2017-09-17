@@ -70,6 +70,7 @@
 }
 
 #nplayer .ncontrolplay {
+    cursor: pointer;
     position: absolute;
     top: .9em;
     right: 3.3em;
@@ -84,6 +85,7 @@
 }
 
 #nplayer .ncontrolnext {
+    cursor: pointer;
     position: absolute;
     top: .9em;
     right: 1.5em;
