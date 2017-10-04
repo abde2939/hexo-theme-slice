@@ -5,7 +5,7 @@ A Simple, Light, Beautiful, Onepaged Hexo Theme.
 ![NHibiki](https://img.shields.io/badge/Author-NHibiki-40aa00.svg?style=flat-square)
 ![Code](https://img.shields.io/badge/Code%20With-<3-ff0000.svg?style=flat-square)
 
-[Demo](https://slice.nekoyu.cc) | [Customize](https://github.com/NHibiki/hexo-theme-slice#customize)
+[Demo](https://slice.yuuno.cc) | [Customize](https://github.com/NHibiki/hexo-theme-slice#customize)
 
 ## Installation
 
@@ -67,7 +67,7 @@ menu:
   Tag: /#/tag
   Category: /#/category
   Link: /#/link
-  NHibiki: https://nekoyu.cc
+  NHibiki: https://yuuno.cc
   # Menu Bar
 
 music:
@@ -89,7 +89,7 @@ comment:
   # Comment System
 
 link:
-  YuunoHibiki: https://nekoyu.cc
+  YuunoHibiki: https://yuuno.cc
   Slice: https://nhibiki.github.io/slice
   # Links You Want To Add
 
