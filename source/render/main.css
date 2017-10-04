@@ -32,7 +32,7 @@ pre::-webkit-scrollbar-thumb, code::-webkit-scrollbar-thumb {
 }
 
 div::-webkit-scrollbar-thumb {
-    background: #af2;
+    background: #66A;
 }
 
 p::selection, pre::selection, li::selection {
@@ -218,6 +218,24 @@ h1:hover, h2:hover, h3:hover, h4:hover, h5:hover {
 .header {
     margin-top: 18%;
     text-align: center;
+}
+
+div.banner {
+    text-align: center;
+    margin: 10px 20px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+div.banner span {
+    width: fit-content;
+    background: #66F;
+    color: white;
+    font-size: .8em;
+    font-weight: 600;
+    padding: 8px 20px;
+    line-height: 34px;
+    white-space: pre;
 }
 
 @media screen and (max-width: 600px) {

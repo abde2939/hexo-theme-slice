@@ -51,7 +51,14 @@
                 <small><%= config.subtitle %></small>
                 <hr />
             </div>
-            
+
+            <% if (config.info) { %>
+                <!--Banner-->
+                <div class="banner">
+                   <span><%= config.info %></span>
+                </div>
+            <% } %>
+
             <!--Article-->
             <div id="article" current="#">
                 <h8 id="atitle" class="article_title">Article</h8>
@@ -92,7 +99,7 @@
                 <% } else { %>
                 <p class="siteinfo">Allrights are preserved by Author.</p>
                 <% } %>
-                <p class="sitecpr">Using Theme <a href="https://github.com/NHibiki/hexo-theme-slice">Slice</a> By <a href="https://nekoyu.cc">NHibiki</a>. Site Copyright &copy;<%= config.author%> 2017.</p>
+                <p class="sitecpr">Using Theme <a href="https://github.com/NHibiki/hexo-theme-slice">Slice</a> By <a href="https://yuuno.cc">NHibiki</a>. Site Copyright &copy;<%= config.author%> 2017.</p>
             </div>
         </div>
         
